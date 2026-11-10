@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { GraduationCap, MapPin, Sparkles, BookOpen, Brain, Terminal } from 'lucide-react';
+import { GraduationCap, MapPin, Sparkles, BookOpen, Brain } from 'lucide-react';
 import { personalData } from '../data';
 
 export default function About() {
@@ -41,16 +41,20 @@ export default function About() {
                   <span className="text-xs font-mono text-slate-400">sreeraj_profile.json</span>
                 </div>
 
-                {/* Profile Avatar Graphic */}
-                <div className="relative w-full aspect-square rounded-xl bg-gradient-to-br from-slate-900 via-slate-800 to-sky-950 flex flex-col items-center justify-center p-6 text-center border border-white/5 overflow-hidden group-hover:border-primary/30 transition-colors">
-                  <div className="w-24 h-24 rounded-2xl bg-gradient-to-tr from-primary/20 to-accent/20 border border-primary/30 flex items-center justify-center mb-4 shadow-inner">
-                    <Terminal className="w-12 h-12 text-primary" />
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-1">{personalData.name}</h3>
-                  <p className="text-xs font-mono text-primary mb-3">AI & Systems Engineer in the Making</p>
-                  <div className="flex items-center gap-2 text-xs text-slate-400">
-                    <MapPin className="w-3.5 h-3.5 text-accent" />
-                    <span>{personalData.location}</span>
+                {/* Profile Photo */}
+                <div className="relative w-full aspect-square rounded-xl overflow-hidden border border-white/10 group-hover:border-primary/30 transition-colors shadow-xl">
+                  <img
+                    src="/profile.jpg"
+                    alt={personalData.name}
+                    className="w-full h-full object-cover object-top"
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent px-4 py-4 flex flex-col items-center text-center">
+                    <h3 className="text-lg font-bold text-white mb-0.5">{personalData.name}</h3>
+                    <p className="text-xs font-mono text-primary">AI & Systems Engineer in the Making</p>
+                    <div className="flex items-center gap-1.5 text-xs text-slate-300 mt-1">
+                      <MapPin className="w-3 h-3 text-accent" />
+                      <span>{personalData.location}</span>
+                    </div>
                   </div>
                 </div>
 
